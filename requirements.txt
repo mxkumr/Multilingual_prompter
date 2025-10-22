@@ -4,4 +4,8 @@ matplotlib>=3.7.0
 numpy>=1.24.0
 langid>=1.1.6
 tree-sitter>=0.20.1
+transformers>=4.30.0
+torch>=2.0.0
+accelerate>=0.20.0
+flash-attn>=2.0.0
 
