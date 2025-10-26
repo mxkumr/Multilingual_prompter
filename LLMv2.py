@@ -3,10 +3,11 @@ import torch
 import json
 import time
 import re
+import os
 from datetime import datetime
 import logging
 
-MODEL_NAME = "Qwen/Qwen3-4B-Instruct-2507"  # Use cached model from Hugging Face 
+MODEL_NAME = "Qwen/Qwen3-30B-A3B-Instruct-2507"  # Use Hugging Face default cache directory 
 
 def extract_code_from_response(response_text):
     """Extract only the code from the LLM response, removing thinking/narrative.

@@ -4,7 +4,7 @@ Multilingual Prompter Pipeline
 This pipeline processes prompts through translation, LLM generation, and analysis.
 
 Usage:
-    python pipeline.py prompts.json --model Qwen/Qwen3-4B-Instruct-2507
+    python pipeline.py prompts.json --model Qwen/Qwen3-30B-A3B-Instruct-2507
     python pipeline.py prompts.json  # Uses default model
 
 Features:
@@ -82,7 +82,7 @@ def query_llm_for_translations(translations: Dict[str, str], model_name: str = N
     
     Args:
         translations: Dictionary of language -> prompt translations
-        model_name: Model name (defaults to Qwen/Qwen3-4B-Instruct-2507)
+        model_name: Model name (defaults to Qwen/Qwen3-30B-A3B-Instruct-2507)
     """
     outputs: Dict[str, str] = {}
     
@@ -92,7 +92,7 @@ def query_llm_for_translations(translations: Dict[str, str], model_name: str = N
     import torch
     
     # Initialize model and tokenizer
-    model_name = model_name or "Qwen/Qwen3-4B-Instruct-2507"
+    model_name = model_name or "Qwen/Qwen3-30B-A3B-Instruct-2507"
     device = "cuda" if torch.cuda.is_available() else "cpu"
     
     print(f"Loading model: {model_name}")
@@ -183,7 +183,7 @@ def process_single_prompt(prompt_data: Dict[str, str], data_dir: str, model_name
     
     print(f"\n{'='*60}")
     print(f"Processing Prompt ID: {prompt_id}")
-    print(f"Using model: {model_name or 'Qwen/Qwen3-4B-Instruct-2507 (default)'}")
+    print(f"Using model: {model_name or 'Qwen/Qwen3-30B-A3B-Instruct-2507 (default)'}")
     print("Features: Code extraction, retry logic, GPU optimization")
     print(f"{'='*60}")
     
